@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "photos"
+version = "0.1.0"
+description = ""
+authors = ["Wille Faler <wfaler@chaordic.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pillow = "^10.4.0"
+rawpy = "^0.22.0"
+pillow-heif = "^0.18.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+photos = 'photos.main:main'
