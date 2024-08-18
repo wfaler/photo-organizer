@@ -55,13 +55,11 @@ def organize_images(source_folder: str, target_folder: str) -> None:
                 year_folder, date_taken.strftime("%Y-%m-%d")
             )
 
-            # Use existing folders if they exist, create if they don't
             os.makedirs(year_folder, exist_ok=True)
             os.makedirs(date_folder, exist_ok=True)
 
             new_file_path: str = os.path.join(date_folder, filename)
 
-            # Check if file already exists
             if os.path.exists(new_file_path):
                 print(f"File {filename} already exists in {date_folder}. Skipping.")
             else:
@@ -71,7 +69,7 @@ def organize_images(source_folder: str, target_folder: str) -> None:
 
 def main():
     if len(sys.argv) != 3:
-        print("Usage: python script.py <source_folder> <target_folder>")
+        print("Usage: poetry run photos <source_folder> <target_folder>")
         sys.exit(1)
 
     source_folder: str = sys.argv[1]
